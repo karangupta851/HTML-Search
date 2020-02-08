@@ -1,0 +1,226 @@
+<style>
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41;
+}
+
+#myInput {
+  border-box: box-sizing;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+.all{display:none}
+
+
+div#all {
+    position: absolute;
+    z-index: 99999;
+    background: rgba(255,255,255, 0.9);
+    width: 100%;
+}
+</style>
+
+<div class="dropdown">
+  <div id="myDropdown" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()" />
+    <div id="all" class="all"></div>
+  </div>
+</div>
+
+<div class="vc_row wpb_row vc_row-fluid myUL"><div class="li wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner" id="1-1-4-squat"><div class="wpb_wrapper">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe src="https://player.vimeo.com/video/313529209?app_id=122963" width="500" height="283" frameborder="0" title="1 &amp; 1-4 Squat" allow="autoplay; fullscreen" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			<h5 style="text-align: center;">1 &amp; 1/4 SQUAT</h5>
+
+		</div>
+	</div>
+</div></div></div><div class="li wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner" id="1-pull-1-snatch"><div class="wpb_wrapper">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe src="https://player.vimeo.com/video/313529234?app_id=122963" width="500" height="283" frameborder="0" title="Snatch Pull Snatch" allow="autoplay; fullscreen" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			<h5 style="text-align: center;">1 PULL 1 SNATCH</h5>
+
+		</div>
+	</div>
+</div></div></div><div class="li wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner" id="back-extensions"><div class="wpb_wrapper">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe src="https://player.vimeo.com/video/309601798?app_id=122963" width="500" height="281" frameborder="0" title="Back Extensions" allow="autoplay; fullscreen" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			<h5 style="text-align: center;">BACK EXTENSIONS</h5>
+
+		</div>
+	</div>
+</div></div></div></div>
+<script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+
+	<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+ 
+}
+function filterFunction() {
+ // document.getElementById("all").show();
+  jQuery(".all").show();
+	var value1 = jQuery("#myInput").val();
+	jQuery(".vc_column-inner").find("h5").css({"background":"","color":""});
+ // alert(value1);
+  if(value1 == ""){
+		jQuery(".all").hide();
+  }
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+
+
+			
+			
+/**filter**/
+jQuery(document).ready(function() {
+jQuery(".vc_column-inner").each(function(){
+
+var name = jQuery(this).find("h5").text();
+scroll = name.toLowerCase();
+scroll = scroll.replace(/[^a-zA-Z0-9]+/g,'-');
+
+var select = "<a data-move='"+scroll+"' href='#"+scroll+"'>"+name+"</a>";
+jQuery(select).appendTo(".all")
+jQuery(this).attr("id",scroll);
+});
+jQuery("#all a").on("click", function(){
+var id = jQuery(this).attr("data-move");
+var text = jQuery(this).text();	
+
+var name1 = jQuery("#"+id).find("h5").text();
+scroll1 = name1.toLowerCase();
+//scroll1 = scroll1.replace(/[^a-zA-Z0-9]+/g,'-');
+//alert(scroll1);
+//var myHilitor = new Hilitor("vc_column-inner"); // id of the element to parse
+ // myHilitor.apply(scroll1);
+ 
+ jQuery("#myInput").val(text);
+	var Inputval = jQuery("#myInput").val();
+	if(Inputval = scroll1){
+	alert(Inputval);
+jQuery("#"+id).find("h5").css({"background":"red","color":"#fff"});
+
+}
+jQuery("#all").hide();
+jQuery('body,html').animate({
+scrollTop: jQuery("#"+id).offset().top
+}, 1000 );
+
+});
+});
+/**filter**/
+</script>
